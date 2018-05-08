@@ -3,8 +3,8 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from rest_framework import generics
-from gestion.models import User, Person,Question,Tag,QuestionTag,Answer
-from gestion.serializers import UserSerializer,PersonSerializer,QuestionSerializer,TagSerializer,QuestionTagSerializer,AnswerSerializer
+from gestion.models import User, Person,Question,Tag,QuestionTag,Answer,ImagenQ,ImagenP
+from gestion.serializers import UserSerializer,PersonSerializer,QuestionSerializer,TagSerializer,QuestionTagSerializer,AnswerSerializer,ImagenQSerializer,ImagenPSerializer
 
 class UserList(generics.ListCreateAPIView):
 	queryset = User.objects.all()
@@ -47,6 +47,7 @@ class QuestionTagDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = QuestionTag.objects.all()
 	serializer_class = QuestionTagSerializer
 
+
 class AnswerList(generics.ListCreateAPIView):
 	queryset = Answer.objects.all()
 	serializer_class = AnswerSerializer
@@ -54,3 +55,19 @@ class AnswerList(generics.ListCreateAPIView):
 class AnswerDetail(generics.RetrieveUpdateDestroyAPIView):
 	queryset = Answer.objects.all()
 	serializer_class = AnswerSerializer
+
+class ImagenQList(generics.ListCreateAPIView):
+	queryset = ImagenQ.objects.all()
+	serializer_class = ImagenQSerializer
+
+class ImagenQDetail(generics.RetrieveUpdateDestroyAPIView):
+	queryset = ImagenQ.objects.all()
+	serializer_class = ImagenQSerializer
+
+class ImagenPList(generics.ListCreateAPIView):
+	queryset = ImagenP.objects.all()
+	serializer_class = ImagenPSerializer
+
+class ImagenPDetail(generics.RetrieveUpdateDestroyAPIView):
+	queryset = ImagenP.objects.all()
+	serializer_class = ImagenPSerializer

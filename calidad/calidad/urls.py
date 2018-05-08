@@ -12,6 +12,7 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+    url(r'^gestion/', include('gestion.urls')),
 """
 
 from django.conf.urls import include, url
@@ -20,7 +21,7 @@ from django.conf import settings
 from rest_framework.authtoken import views
 
 urlpatterns = [
-    url(r'^gestion/', include('gestion.urls')),
+    
     url(r'^admin/', admin.site.urls),
     url(r'^docs/',include('rest_framework_docs.urls')),
 ]

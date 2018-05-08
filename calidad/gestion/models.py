@@ -48,4 +48,15 @@ class Answer ( models.Model):
     class Meta:
     	ordering = ('astatement',)
 
-    
+class ImagenQ ( models.Model):
+	imagenQ = models.ImageField(upload_to='static/', default='static/media/')
+	question = models.ForeignKey(Question)
+	class Meta:
+		ordering = ('imagenQ',)
+
+class ImagenP ( models.Model):
+	person = models.ForeignKey(Person)
+	imagenP = models.ImageField(upload_to='static/', default='static/media/')
+
+	class Meta:
+		ordering = ('imagenP',)

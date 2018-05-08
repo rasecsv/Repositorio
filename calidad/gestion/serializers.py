@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from gestion.models import User,Person,Question,Tag,QuestionTag,Answer
+from gestion.models import User,Person,Question,Tag,QuestionTag,Answer,ImagenQ,ImagenP
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -31,3 +31,13 @@ class AnswerSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Answer
 		fields = ('id','astatement','question','person')
+
+class ImagenQSerializer (serializers.ModelSerializer):
+	class Meta:
+		model = ImagenQ
+		fields = (' id', 'question', 'imagenQ')
+
+class ImagenPSerializer ( serializers.ModelSerializer):
+	class Meta:
+		model = ImagenP
+		fields = ('id','person','imagenP')
